@@ -1,0 +1,54 @@
+<div class="container">
+    <form #signInForm="ngForm">
+        <div class="login-container border rounded p-5">
+            <div class="row">
+                <div class="col-md-12">
+                    <h1 class="text-center">Login</h1>
+                </div>
+                <div class="col-md-12">
+                    <div class="form-group">
+                        <label class="form-label">Email</label>
+                        <input type="email" name="email" id="email" [(ngModel)]="loginForm.username" required class="form-control" #email="ngModel" pattern="^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z0-9]{2,3}$">
+                        <div *ngIf="email.errors && isSubmitted" class="alert alert-danger validationError">
+                            <div [hidden]="!email.errors['required']">
+                            Email is required
+                            </div>
+                            <div [hidden]="!email.errors['touched'] && !email.errors['pattern']">
+                            Email is invalid
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-12">
+                    <div class="form-group">
+                        <label class="form-label">Password</label>
+                        <input type="password" name="pass" [(ngModel)]="loginForm.password" required class="form-control"  id="pass" #pass="ngModel">
+                        <div *ngIf="pass.errors && isSubmitted" class="alert alert-danger validationError">
+                            <div [hidden]="!pass.errors['required']">
+                            Password is required
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-12">
+                    <div class="form-group">
+                        <button (click)="authenticate()" ng-disabled="signInForm.$invalid" class="btn btn-success pull-right">
+                            Login
+                        </button>
+                        <div class="clearfix"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="row mt-3">
+                <div class="col-md-12">
+                    <div *ngIf="showError" class="alert alert-danger">
+                        Wrong credentials!
+                    </div>
+                    <div *ngIf="showSuccess" class="alert alert-success">
+                        Login Successful!
+                    </div>
+                </div>
+            </div>
+        </div>
+    </form>
+</div>
