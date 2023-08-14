@@ -52,11 +52,11 @@ export class LoginFormComponent {
       this.toastr.success("Login Successful!");
       localStorage.setItem("loggedIn", this.userName);
       setTimeout(() => {
-        this.router.navigate(['/'])
+        this.router.navigate([''])
         .then(() => {
           location.reload()
         });
-      }, 500);
+      }, 2000);
     } else {
       this.showError = true;
       this.showSuccess = false;
