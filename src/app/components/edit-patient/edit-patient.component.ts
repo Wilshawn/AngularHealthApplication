@@ -30,12 +30,14 @@ export class EditPatientComponent implements OnInit {
         var resultData = data.body;
         if (resultData) {
           this.editPatientForm.Id = resultData.id;
-          this.editPatientForm.firstName = resultData.firstName;
-          this.editPatientForm.lastName = resultData.lastName;
+          this.editPatientForm.name = resultData.name;
+          this.editPatientForm.username = resultData.username;
           this.editPatientForm.email = resultData.email;
-          this.editPatientForm.address = resultData.address;
+          this.editPatientForm.street = resultData.street;
+          this.editPatientForm.suite = resultData.suite;
+          this.editPatientForm.city = resultData.city;
+          this.editPatientForm.zipcode = resultData.zipcode;
           this.editPatientForm.phone = resultData.phone;
-          this.editPatientForm.notes = resultData.notes;
         }
       }
     },
@@ -65,10 +67,12 @@ export class EditPatientComponent implements OnInit {
 
 export class patientForm {
   Id: number = 0;
-  firstName: string = "";
-  lastName: string = "";
+  name: string = "";
+  username: string = "";
   email: string = "";
-  address: string = "";
+  street: string = "";
+  suite: string = "";
+  city: string = "";
+  zipcode: string = "";
   phone: string = "";
-  notes: string = "";
 }

@@ -2,7 +2,8 @@ import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { WebApiService } from './web-api.service';
 
-var apiUrl = "http://localhost:3000/patients";
+var apiUrl = "https://jsonplaceholder.typicode.com/users"
+//var apiUrl = "http://localhost:3000/patients";
 
 var httpLink =  {
   getAllPatient: apiUrl,

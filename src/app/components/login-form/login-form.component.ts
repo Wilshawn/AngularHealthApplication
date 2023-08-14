@@ -23,7 +23,7 @@ export class LoginFormComponent {
 
   validUsers = [
     {
-      'username':'info@admin.com', 'password': '4r0$E4ICr+?_aQUSP#2O', 'name':'Admin'
+      'username':'info@admin.com', 'password': 'admin', 'name':'Admin'
     }
   ]
   showError: boolean = false;

@@ -41,10 +41,12 @@ export class AddPatientComponent implements OnInit {
 }
 
 export class patientForm {
-  firstName: string = "";
-  lastName: string = "";
+  name: string = "";
+  username: string = "";
   email: string = "";
-  address: string = "";
+  street: string = "";
+  suite: string = "";
+  city: string = "";
+  zipcode: string = "";
   phone: string = "";
-  notes: string = "";
 }

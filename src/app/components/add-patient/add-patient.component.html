@@ -1,43 +1,43 @@
 <div class="container-xl">
 <div class="table-responsive">
     <div class="table-wrapper">
-    <div class="table-title">
-        <div class="d-flex justify-content-between align-items-center mb-4">
-            <div>
-                <h4><strong>New Patient</strong></h4>
-            </div>
-            <div>
-                <a href="#" routerLink="/Home" class="btn btn-success back"><i class='fas fa-arrow-circle-left'></i>
-                    Back</a>
+        <div class="table-title">
+            <div class="d-flex justify-content-between align-items-center mb-4">
+                <div>
+                    <h4><strong>New Patient</strong></h4>
+                </div>
+                <div>
+                    <a href="#" routerLink="/Home" class="btn btn-success back"><i class='fas fa-arrow-circle-left'></i>
+                        Back</a>
+                </div>
             </div>
         </div>
-    </div>
-    <form #patientForm="ngForm">
-        <div class="table-content">
+        <form #patientForm="ngForm">
+            <div class="table-content">
             <div class="form-group mb-4 p-10 row">
                 <div class="col-sm-3">
-                <label for="firstName" class="p-t-b-10">First Name<span class="requiredStar">*</span></label>
+                <label for="name" class="p-t-b-10">Name<span class="requiredStar">*</span></label>
                 </div>
                 <div class="col-sm-9">
-                <input type="text" class="form-control" id="firstName" required maxlength="255"
-                    [(ngModel)]="addPatientForm.firstName" name="firstName" #firstName="ngModel">
-                <div *ngIf="firstName.errors && isSubmitted" class="alert alert-danger validationError">
-                    <div [hidden]="!firstName.errors['required']">
-                    First Name is required
+                <input type="text" class="form-control" id="name" required maxlength="255"
+                    [(ngModel)]="addPatientForm.name" name="name" #name="ngModel">
+                <div *ngIf="name.errors && isSubmitted" class="alert alert-danger validationError">
+                    <div [hidden]="!name.errors['required']">
+                    Name is required
                     </div>
                 </div>
                 </div>
             </div>
             <div class="form-group mb-4 p-10 row">
                 <div class="col-sm-3">
-                <label for="lastName" class="p-t-b-10">Last Name<span class="requiredStar">*</span></label>
+                <label for="username" class="p-t-b-10">Username<span class="requiredStar">*</span></label>
                 </div>
                 <div class="col-sm-9">
-                <input type="text" class="form-control" id="lastName" required maxlength="255"
-                    [(ngModel)]="addPatientForm.lastName" name="lastName" #lastName="ngModel">
-                <div *ngIf="lastName.errors && isSubmitted" class="alert alert-danger validationError">
-                    <div [hidden]="!lastName.errors['required']">
-                    Last Name is required
+                <input type="text" class="form-control" id="username" required maxlength="255"
+                    [(ngModel)]="addPatientForm.username" name="username" #username="ngModel">
+                <div *ngIf="username.errors && isSubmitted" class="alert alert-danger validationError">
+                    <div [hidden]="!username.errors['required']">
+                    Username is required
                     </div>
                 </div>
                 </div>
@@ -62,14 +62,54 @@
             </div>
             <div class="form-group mb-4 p-10 row">
                 <div class="col-sm-3">
-                <label class="p-t-b-10">Address<span class="requiredStar">*</span></label>
+                <label for="street" class="p-t-b-10">Address Street<span class="requiredStar">*</span></label>
                 </div>
                 <div class="col-sm-9">
-                <textarea class="form-control" id="address" required [(ngModel)]="addPatientForm.address" name="address"
-                    #address="ngModel">></textarea>
-                <div *ngIf="address.errors && isSubmitted" class="alert alert-danger validationError">
-                    <div [hidden]="!address.errors['required']">
-                    Address is required
+                <input type="text" class="form-control" id="street" required maxlength="255"
+                    [(ngModel)]="addPatientForm.street" name="street" #street="ngModel">
+                <div *ngIf="street.errors && isSubmitted" class="alert alert-danger validationError">
+                    <div [hidden]="!street.errors['required']">
+                    Address Street is required
+                    </div>
+                </div>
+                </div>
+            </div>
+            <div class="form-group mb-4 p-10 row">
+                <div class="col-sm-3">
+                <label for="suite" class="p-t-b-10">Address Suite</label>
+                </div>
+                <div class="col-sm-9">
+                <input type="text" class="form-control" id="suite" required maxlength="255"
+                    [(ngModel)]="addPatientForm.suite" name="suite" #suite="ngModel">
+                </div>
+            </div>
+            <div class="form-group mb-4 p-10 row">
+                <div class="col-sm-3">
+                <label for="city" class="p-t-b-10">City<span class="requiredStar">*</span></label>
+                </div>
+                <div class="col-sm-9">
+                <input type="text" class="form-control" id="city" required maxlength="255"
+                    [(ngModel)]="addPatientForm.city" name="city" #city="ngModel">
+                <div *ngIf="city.errors && isSubmitted" class="alert alert-danger validationError">
+                    <div [hidden]="!city.errors['required']">
+                    City is required
+                    </div>
+                </div>
+                </div>
+            </div>
+            <div class="form-group mb-4 p-10 row">
+                <div class="col-sm-3">
+                <label class="p-t-b-10">Zipcode<span class="requiredStar">*</span></label>
+                </div>
+                <div class="col-sm-9">
+                <input type="text" class="form-control" id="zipcode" required maxlength="10"
+                    [(ngModel)]="addPatientForm.zipcode" name="zipcode" #zipcode="ngModel">
+                <div *ngIf="zipcode.errors && isSubmitted" class="alert alert-danger validationError">
+                    <div [hidden]="!zipcode.errors['required']">
+                    Zipcode is required
+                    </div>
+                    <div [hidden]="!zipcode.errors['touched']">
+                    Zipcode is invalid
                     </div>
                 </div>
                 </div>
@@ -80,32 +120,22 @@
                 </div>
                 <div class="col-sm-9">
                 <input type="text" class="form-control" id="phone" required maxlength="10"
-                    [(ngModel)]="addPatientForm.phone" name="phone" #phone="ngModel" pattern="^\d{3}\d{3}\d{4}$">
+                    [(ngModel)]="addPatientForm.phone" name="phone" #phone="ngModel">
                 <div *ngIf="phone.errors && isSubmitted" class="alert alert-danger validationError">
                     <div [hidden]="!phone.errors['required']">
                     Phone is required
                     </div>
-                    <div [hidden]="!phone.errors['touched'] && !phone.errors['pattern']">
+                    <div [hidden]="!phone.errors['touched']">
                     Phone is invalid
                     </div>
                 </div>
                 </div>
             </div>
-            <div class="form-group mb-4 p-10 row">
-                <div class="col-sm-3">
-                    <label for="notes" class="p-t-b-10">Notes</label>
-                    </div>
-                    <div class="col-sm-9">
-                    <textarea class="form-control" id="notes"
-                        [(ngModel)]="addPatientForm.notes" name="notes" #notes="ngModel">
-                    </textarea>
-                </div>
             </div>
-        </div>
-        <div class="table-footer">
+            <div class="table-footer">
             <button class="btn btn-success" (click)="AddPatient(patientForm.form.valid)">Submit</button>
-        </div>
-    </form>
+            </div>
+        </form>
     </div>
 </div>
 </div>

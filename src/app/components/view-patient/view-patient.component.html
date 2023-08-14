@@ -17,12 +17,12 @@
         <table class="table table-striped table-hover table-bordered table-content">
           <tbody>
             <tr>
-              <td><label><strong>First Name</strong></label></td>
-              <td><span>{{ patientDetail.firstName }}</span></td>
+              <td><label><strong>Full Name</strong></label></td>
+              <td><span>{{ patientDetail.name }}</span></td>
             </tr>
             <tr>
-              <td><label><strong>Last Name</strong></label> </td>
-              <td><span>{{ patientDetail.lastName }}</span></td>
+              <td><label><strong>Username</strong></label> </td>
+              <td><span>{{ patientDetail.username }}</span></td>
             </tr>
             <tr>
               <td> <label><strong>Email</strong></label></td>
@@ -30,16 +30,16 @@
             </tr>
             <tr>
               <td> <label><strong>Address</strong></label></td>
-              <td><span>{{ patientDetail.address }}</span></td>
+              <td><span>{{ patientDetail.address['street'] }} {{ patientDetail.address['suite'] }},<br>{{ patientDetail.address['city'] }} {{ patientDetail.address['zipcode'] }}</span></td>
             </tr>
             <tr>
               <td> <label><strong>Phone</strong></label></td>
               <td> <span>{{ patientDetail.phone }}</span></td>
             </tr>
-            <tr>
+            <!-- <tr>
               <td> <label><strong>Notes</strong></label></td>
               <td> <span>{{ patientDetail.notes }}</span></td>
-            </tr>
+            </tr> -->
           </tbody>
         </table>
       </div>
