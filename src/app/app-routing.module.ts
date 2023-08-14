@@ -7,6 +7,7 @@ import { ViewPatientComponent } from './components/view-patient/view-patient.com
 import { LoginFormComponent } from './components/login-form/login-form.component';
 import { SearchComponent } from './components/search/search.component';
 import { AuthGuard } from './services/authguard.service';
+import { HashLocationStrategy, LocationStrategy } from '@angular/common';
 
 const routes: Routes = [
   { path: '', redirectTo: 'Home', pathMatch: 'full'},
@@ -19,6 +20,7 @@ const routes: Routes = [
 ];
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
+  providers: [{provide: LocationStrategy, useClass: HashLocationStrategy}]
 })
 export class AppRoutingModule { }
