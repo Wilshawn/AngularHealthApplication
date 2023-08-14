@@ -1,4 +1,4 @@
-import { Component, ViewChild } from '@angular/core';
+import { Component, ViewChild, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { HttpProviderService } from 'src/app/services/http-provider.service';
 import { ToastrService } from 'ngx-toastr';
@@ -31,6 +31,12 @@ export class LoginFormComponent {
   flag: boolean = false;
   constructor(private router: Router, private httpProvider: HttpProviderService, private toastr: ToastrService) { }
 
+  ngOnInit(): void {
+    if (localStorage.getItem("loggedIn")) {
+      this.router.navigate(['/Home']);
+    }
+  }
+
   authenticate() {
     console.log('button clicked');
     this.isSubmitted = true;
@@ -51,12 +57,7 @@ export class LoginFormComponent {
       this.showSuccess = true;
       this.toastr.success("Login Successful!");
       localStorage.setItem("loggedIn", this.userName);
-      setTimeout(() => {
-        this.router.navigate([''])
-        .then(() => {
-          location.reload()
-        });
-      }, 2000);
+      location.reload();
     } else {
       this.showError = true;
       this.showSuccess = false;
