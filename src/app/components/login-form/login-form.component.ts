@@ -52,7 +52,7 @@ export class LoginFormComponent {
       this.toastr.success("Login Successful!");
       localStorage.setItem("loggedIn", this.userName);
       setTimeout(() => {
-        this.router.navigate(['/Home'])
+        this.router.navigate(['/'])
         .then(() => {
           location.reload()
         });

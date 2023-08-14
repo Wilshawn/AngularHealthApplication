@@ -23,6 +23,11 @@ export class AppComponent {
   }
   signOut() {
     localStorage.removeItem('loggedIn');
-    location.reload();
+    setTimeout(() => {
+      this.router.navigate(['/'])
+      .then(() => {
+        location.reload()
+      });
+    }, 500);
   }
 }
