@@ -33,10 +33,10 @@ export class EditPatientComponent implements OnInit {
           this.editPatientForm.name = resultData.name;
           this.editPatientForm.username = resultData.username;
           this.editPatientForm.email = resultData.email;
-          this.editPatientForm.street = resultData.street;
-          this.editPatientForm.suite = resultData.suite;
-          this.editPatientForm.city = resultData.city;
-          this.editPatientForm.zipcode = resultData.zipcode;
+          this.editPatientForm.street = resultData.address.street;
+          this.editPatientForm.suite = resultData.address.suite;
+          this.editPatientForm.city = resultData.address.city;
+          this.editPatientForm.zipcode = resultData.address.zipcode;
           this.editPatientForm.phone = resultData.phone;
         }
       }
